@@ -1,5 +1,3 @@
-using System;
-
 namespace Task1_1
 {
 	class BasicAnimal
