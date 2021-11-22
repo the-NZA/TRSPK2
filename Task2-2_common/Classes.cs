@@ -19,7 +19,8 @@ namespace Task2_2_common
 			return arr;
 		}
 	}
-	
+
+
 	public class Worker
 	{
 		public string Name;
@@ -31,6 +32,7 @@ namespace Task2_2_common
 			Salary = salary;
 		}
 	}
+
 	public class Solver
 	{
 		public int FindMax(int[] arr)
@@ -263,7 +265,7 @@ namespace Task2_2_common
 			{
 				if (map.TryGetValue(item.Name, out _))
 				{
-					 map[item.Name] += item.Salary;
+					map[item.Name] += item.Salary;
 				}
 				else
 				{
@@ -302,10 +304,49 @@ namespace Task2_2_common
 			return res.ToArray();
 		}
 
-		public void SortPairsByBothFields<T>((T, T)[] arr) where T: IComparable<T>
+		public void SortPairsByBothFields<T>((T, T)[] arr) where T : IComparable<T>
 		{
 			Array.Sort(arr, (s1, s2) => s1.Item1.CompareTo(s2.Item1));
 			Array.Sort(arr, (s1, s2) => s2.Item2.CompareTo(s1.Item2));
+		}
+
+		public (int, int, int)[] GetTripples(int n)
+		{
+			if (n <= 0)
+			{
+				throw new Exception("N must be greater than zero");
+			}
+
+			List<int> arr1 = new List<int>();
+			List<int> arr2 = new List<int>();
+			List<int> arr3 = new List<int>();
+
+			Random rndm = new Random();
+			for (int i = 0; i < ((n > 5) ? n / 3 : n); i++)
+			{
+				arr1.Add(rndm.Next(-n, n));
+				arr2.Add(rndm.Next(-n, n));
+				arr3.Add(rndm.Next(-n, n));
+			}
+
+			Console.WriteLine("Array1: " + string.Join(", ", arr1));
+			Console.WriteLine("Array2: " + string.Join(", ", arr2));
+			Console.WriteLine("Array3: " + string.Join(", ", arr3));
+
+			List<(int, int, int)> res = new List<(int, int, int)>();
+
+			for (int i = 0; i < arr1.Count; i++)
+			{
+				for (int j = 0; j < arr2.Count; j++)
+				{
+					for (int k = 0; k < arr2.Count; k++)
+					{
+						res.Add((arr1[i], arr2[j], arr3[k]));
+					}
+				}
+			}
+
+			return res.ToArray();
 		}
 	}
 }

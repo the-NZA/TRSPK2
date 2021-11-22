@@ -144,6 +144,9 @@ namespace Task2_2_common
 			}
 			
 			// н)
+			var resTriples = slv.GetTripples(10);
+			Console.WriteLine("Triples:");
+			Console.WriteLine(String.Join(",", resTriples));
 		}
 	}
 }
