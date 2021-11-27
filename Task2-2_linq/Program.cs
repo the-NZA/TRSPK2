@@ -17,7 +17,7 @@ namespace Task2_2_linq
 			for (var i = 0; i < n; i++)
 				aData[i] = rnd.Next(-n, n);
 			Console.WriteLine("Array: " + string.Join(", ", aData));
-			Console.WriteLine("Max: " + aData.ToList().Max().ToString());
+			Console.WriteLine("Max: " + aData.Max());
 		}
 
 		static void B(int n)
@@ -185,6 +185,7 @@ namespace Task2_2_linq
 				hData[i] = rnd.Next(-n, n);
 			Console.WriteLine("Array 1: " + string.Join(", ", hData));
 			var hQuery = hData.ToList().OrderBy(n => (n % 2) * (n % 2)).ThenBy(n => n);
+			var groupRes = hData.GroupBy(item => Math.Abs(item % 2));
 			Console.Write("Answer:");
 			foreach (var res in hQuery)
 				Console.Write(" " + res.ToString());

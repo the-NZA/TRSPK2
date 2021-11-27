@@ -67,6 +67,7 @@ namespace Task2_1
 				{
 					DateTime dt = DateTime.Now;
 					StringBuilder sb = new StringBuilder();
+					
 					sb.Append(
 						$"Date: {dt:dd.MM.yyyy : hh:mm}, Message: {ex.Message}, Parameters: {sb}");
 					sb.AppendJoin(",", ex.Parameters);
