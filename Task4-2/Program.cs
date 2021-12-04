@@ -416,11 +416,32 @@ namespace Task4_2
 	{
 		static void Main()
 		{
-			// var producerUnbuf = new ProducerUnbuf();
-			// producerUnbuf.Start(50);
+			try
+			{
+				Console.Write("Choose 0 – for unbuffered option and 1 – for buffered option\n> ");
+				var s = Console.ReadLine() ?? string.Empty;
+				
+				switch (int.Parse(s))
+				{
+					case 0:
+						var producerUnbuf = new ProducerUnbuf();
+						producerUnbuf.Start(50);
 
-			var producer = new Producer();
-			producer.Start(50);
+						break;
+					case 1:
+						var producer = new Producer();
+						producer.Start(50);
+						
+						break;
+					default:
+						Console.WriteLine("Entered unsupported option");
+						break;
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex);
+			}
 		}
 	}
 }
