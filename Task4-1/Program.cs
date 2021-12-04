@@ -9,38 +9,47 @@ namespace Task4_1
 		static void Main()
 		{
 			int threadCnt = 10;
-			
-			// Benchmark standard threads
-			CountdownEvent ce1 = new CountdownEvent(10);
-			Stopwatch timer = new Stopwatch();
-			
-			timer.Start();
-			for (int i = 0; i < threadCnt; i++)
+
+			for (threadCnt = 1; threadCnt < 20; threadCnt++)
 			{
-				var t = new Thread(ThreadFunc);
-				t.Start(ce1);
+				// Benchmark standard threads
+				CountdownEvent ce1 = new CountdownEvent(threadCnt);
+				Stopwatch timer = new Stopwatch();
+
+				timer.Start();
+				for (int i = 0; i < threadCnt; i++)
+				{
+					var t = new Thread(ThreadFunc);
+					t.Start(ce1);
+				}
+
+				ce1.Wait();
+				timer.Stop();
+
+				Console.WriteLine($"Standard threads time is: {timer.ElapsedMilliseconds}");
+
+				// Benchmark thread pool
+				ce1 = new CountdownEvent(threadCnt);
+
+				timer.Restart();
+				for (int i = 0; i < threadCnt; i++)
+				{
+					ThreadPool.QueueUserWorkItem(ThreadFunc, ce1);
+				}
+
+				ce1.Wait();
+				timer.Stop();
+
+				Console.WriteLine($"ThreadPool time is: {timer.ElapsedMilliseconds}");
 			}
-			ce1.Wait();
-			timer.Stop();
-			
-			Console.WriteLine($"Standard threads time is: {timer.ElapsedMilliseconds}");
-			
-			// Benchmark thread pool
-			ce1 = new CountdownEvent(10);
-			
-			timer.Restart();
-			for (int i = 0; i < threadCnt; i++)
-			{
-				ThreadPool.QueueUserWorkItem(ThreadFunc, ce1);
-			}
-			ce1.Wait();
-			timer.Stop();
-			
-			Console.WriteLine($"ThreadPool time is: {timer.ElapsedMilliseconds}");
 		}
 
 		static void ThreadFunc(object obj)
 		{
+			for (int i = 0; i < 1000000; i++)
+			{
+				
+			}
 			((CountdownEvent) obj).Signal();
 		}
 	}
