@@ -1,0 +1,15 @@
+/Users/romankozlov/RiderProjects/TRSPK2/Task5-2/bin/Debug/net5.0/Task5-2.deps.json
+/Users/romankozlov/RiderProjects/TRSPK2/Task5-2/bin/Debug/net5.0/Task5-2.runtimeconfig.json
+/Users/romankozlov/RiderProjects/TRSPK2/Task5-2/bin/Debug/net5.0/Task5-2.runtimeconfig.dev.json
+/Users/romankozlov/RiderProjects/TRSPK2/Task5-2/bin/Debug/net5.0/Task5-2.dll
+/Users/romankozlov/RiderProjects/TRSPK2/Task5-2/bin/Debug/net5.0/ref/Task5-2.dll
+/Users/romankozlov/RiderProjects/TRSPK2/Task5-2/bin/Debug/net5.0/Task5-2.pdb
+/Users/romankozlov/RiderProjects/TRSPK2/Task5-2/obj/Debug/net5.0/Task5-2.csproj.AssemblyReference.cache
+/Users/romankozlov/RiderProjects/TRSPK2/Task5-2/obj/Debug/net5.0/Task5-2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/romankozlov/RiderProjects/TRSPK2/Task5-2/obj/Debug/net5.0/Task5-2.AssemblyInfoInputs.cache
+/Users/romankozlov/RiderProjects/TRSPK2/Task5-2/obj/Debug/net5.0/Task5-2.AssemblyInfo.cs
+/Users/romankozlov/RiderProjects/TRSPK2/Task5-2/obj/Debug/net5.0/Task5-2.csproj.CoreCompileInputs.cache
+/Users/romankozlov/RiderProjects/TRSPK2/Task5-2/obj/Debug/net5.0/Task5-2.dll
+/Users/romankozlov/RiderProjects/TRSPK2/Task5-2/obj/Debug/net5.0/ref/Task5-2.dll
+/Users/romankozlov/RiderProjects/TRSPK2/Task5-2/obj/Debug/net5.0/Task5-2.pdb
+/Users/romankozlov/RiderProjects/TRSPK2/Task5-2/obj/Debug/net5.0/Task5-2.genruntimeconfig.cache
