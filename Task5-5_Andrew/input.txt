@@ -1,0 +1,9 @@
+aaa
+bbb
+cccaaa
+   bbb
+   cccaaa
+      bbb
+      cccaaa
+         bbb
+         ccc

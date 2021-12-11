@@ -70,6 +70,8 @@ namespace Task5_4
 		{
 			Dispose(true);
 			GC.SuppressFinalize(this);
+			
+			Console.WriteLine("Disposed");
 		}
 
 		protected virtual void Dispose(bool disposing)
